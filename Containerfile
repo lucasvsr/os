@@ -22,6 +22,9 @@ COPY ${RECIPE} /usr/etc/ublue-recipe.yml
 # yq used in build.sh and the setup-flatpaks recipe to read the recipe.yml
 # copied from the official container image as it's not avaible as an rpm
 COPY --from=docker.io/mikefarah/yq /usr/bin/yq /usr/bin/yq
+COPY --from=docker.io/bketelsen/vanilla-os:v0.0.12 /usr/share/backgrounds/vanilla /usr/share/backgrounds/vanilla
+COPY --from=docker.io/bketelsen/vanilla-os:v0.0.12 /usr/share/gnome-background-properties/vanilla.xml /usr/share/gnome-background-properties/vanilla.xml
+COPY --from=docker.io/bketelsen/vanilla-os:v0.0.12 /usr/share/themes/ /usr/share/themes/
 
 # copy and run the build script
 COPY build.sh /tmp/build.sh

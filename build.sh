@@ -1,7 +1,7 @@
 #!/bin/bash
-# run scripts
-echo "-- Running scripts defined in recipe.yml --"
-buildscripts=$(yq '.scripts[]' < /usr/etc/ublue-recipe.yml)
+
+echo "-- Running scripts defined to run before install rpms in recipe.yml --"
+buildscripts=$(yq '.scripts.before[]' < /usr/etc/ublue-recipe.yml)
 for script in $(echo -e "$buildscripts"); do \
     echo "Running: ${script}" && \
     /tmp/scripts/$script; \
@@ -9,7 +9,7 @@ done
 echo "---"
 
 # remove the default firefox (from fedora) in favor of the flatpak
-rpm-ostree override remove firefox firefox-langpacks
+# rpm-ostree override remove firefox firefox-langpacks
 
 repos=$(yq '.extrarepos[]' < /usr/etc/ublue-recipe.yml)
 if [[ -n "$repos" ]]; then
@@ -30,6 +30,14 @@ echo "---"
 
 # install yafti to install flatpaks on first boot, https://github.com/ublue-os/yafti
 pip install --prefix=/usr yafti
+
+echo "-- Running scripts defined to run after install rpms in recipe.yml --"
+buildscripts=$(yq '.scripts.after[]' < /usr/etc/ublue-recipe.yml)
+for script in $(echo -e "$buildscripts"); do \
+    echo "Running: ${script}" && \
+    /tmp/scripts/$script; \
+done
+echo "---"
 
 # add a package group for yafti using the packages defined in recipe.yml
 flatpaks=$(yq '.flatpaks[]' < /tmp/ublue-recipe.yml)

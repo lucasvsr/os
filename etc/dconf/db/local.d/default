@@ -1,0 +1,25 @@
+[org/gnome/desktop/calendar]
+show-weekdate=false
+
+[org/gnome/desktop/peripherals/keyboard]
+numlock-state=true
+
+[org/gnome/desktop/wm/keybindings]
+activate-window-menu=@as []
+close=['<Alt>F4', '<Super>q']
+cycle-windows=['<Alt>Escape']
+cycle-windows-backward=['<Shift><Alt>Escape']
+minimize=['<Alt><Super>Down']
+switch-applications=['<Super>Tab']
+switch-applications-backward=['<Shift><Super>Tab']
+switch-input-source=['<Alt>space']
+switch-input-source-backward=['<Shift><Alt>space']
+switch-windows=['<Alt>Tab']
+switch-windows-backward=['<Shift><Alt>Tab']
+toggle-fullscreen=['<Shift><Super>m']
+
+[org/gnome/desktop/wm/preferences]
+button-layout='appmenu:close'
+
+[org/gnome/shell/keybindings]
+show-screenshot-ui=['Print', '<Shift><Super>4']
