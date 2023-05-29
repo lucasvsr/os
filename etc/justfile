@@ -7,35 +7,17 @@ bios:
 changelogs:
   rpm-ostree db diff --changelogs
 
-distrobox-boxkit:
-  echo 'Creating Boxkit distrobox ...'
-  distrobox create --image ghcr.io/lucasvsr/boxkit -n boxkit -Y
- 
-distrobox-ubuntu:
-  echo 'Creating Ubuntu distrobox ...'
-  distrobox create --image quay.io/toolbx-images/ubuntu-toolbox:22.04 -n ubuntu -Y
-
-setup-flatpaks:
-  #!/bin/bash
-  echo 'Installing flatpaks from the ublue recipe ...'
-  flatpaks=$(yq '.flatpaks[]' < /usr/etc/ublue-recipe.yml)
-  for pkg in $flatpaks; do \
-      echo "Installing: ${pkg}" && \
-      flatpak install --user --noninteractive flathub $pkg; \
-  done
-
-setup-pwa:
-  echo 'Giving browser permission to create PWAs (Progressive Web Apps)'
-  # Add for your favorite chromium-based browser
-  flatpak override --user --filesystem=~/.local/share/applications --filesystem=~/.local/share/icons com.microsoft.Edge
+boxkit:
+  echo 'Criando boxkit...'
+  distrobox create -a "--env SHELL=/bin/fish" -n arch -Y
 
 update:
   #!/bin/bash
-  echo "Staging system update..."
+  echo "Atualizando o sistema..."
   rpm-ostree update
 
-  echo "Updating Flatpaks..."
+  echo "Atualizando flatpaks..."
   flatpak update -y
 
-  echo "Updating Distroboxes..."
+  echo "Atualizando distroboxes..."
   distrobox upgrade -a
