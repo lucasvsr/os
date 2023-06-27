@@ -21,7 +21,6 @@ description: A starting point for further customization of uBlue images. Make yo
 # Place scripts in scripts/ and put the corresponding filename here
 scripts:
   before:
-    - vscode.sh
   after:
     - docker.sh
     - extensions.sh
@@ -41,7 +40,6 @@ rpms:
   - libadwaita # libadwaita comes with silverblue, but not with other flavors
   # add your own below
   - adw-gtk3-theme
-  - code
   - distrobox
   - docker-ce
   - docker-ce-cli
