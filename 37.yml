@@ -51,7 +51,7 @@ rpms:
   - micro
   - neofetch
   - htop
-  - https://cdn.insynchq.com/builds/linux/insync-3.8.5.50499-fc37.x86_64.rpm
+  - https://cdn.insynchq.com/builds/linux/insync-3.8.5.50499-fc%FEDORA_VERSION%.x86_64.rpm
 
 # These Flatpaks (from flathub) will be available for install on boot
 # this is just an example selection.
