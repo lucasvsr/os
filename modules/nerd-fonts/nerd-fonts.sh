@@ -49,8 +49,6 @@ download() {
 
     done
 
-    unset baixado
-
 }
 
 mkcd $FONTS_DIR
