@@ -39,13 +39,13 @@ download() {
                 esac
 
                 rm -rf "$file"
-                cd ..
+                cd $FONTS_DIR
                 echo "--- $font baixada ---"
 
             else
 
                 echo "--- Não foi possível baixar $1 ---"
-                cd ..
+                cd $FONTS_DIR
                 rm -rf "$1"
 
             fi
