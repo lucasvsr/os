@@ -10,15 +10,6 @@ image-version: 38 # latest is also supported if you want new updates ASAP
 # module configuration, executed in order
 # you can include multiple instances of the same module
 modules:
-  - type: nerd-fonts
-    fonts:
-      - FiraCode
-      - Hack
-      - SourceCodePro
-      - Terminus
-      - JetBrainsMono
-      - NerdFontsSymbolsOnly
-
   - type: files
     files:
       - usr: /usr # copy static configurations
@@ -77,5 +68,14 @@ modules:
       - signing.sh
       - docker.sh
       - extensions.sh
+  
+  - type: nerd-fonts
+    fonts:
+      - FiraCode
+      - Hack
+      - SourceCodePro
+      - Terminus
+      - JetBrainsMono
+      - NerdFontsSymbolsOnly
   
   
