@@ -40,7 +40,6 @@ download() {
 
                 rm -rf "$file"
                 cd ..
-                baixado="yes"
                 echo "--- $font baixada ---"
 
             else
