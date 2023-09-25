@@ -66,7 +66,7 @@ get_yaml_array nerdfonts '.fonts[]' "$1"
 
 for font in "${nerdfonts[@]}"; do
 
-    font=$(echo "$font" | tr '\n' '')
+    font=$(echo "$font" | tr -d '\n')
 
     echo "--- Baixando $font ---"
 
