@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE wallpapers SYSTEM "gnome-wp-list.dtd">
+<wallpapers>
+  <wallpaper deleted="false">
+    <name>benjamin-voros-250200</name>
+    <filename>/usr/share/backgrounds/lvsr/01.jpg</filename>
+    <options>zoom</options>
+    <shade_type>solid</shade_type>
+    <pcolor>#c0c0c0</pcolor>
+    <scolor>#201c1e</scolor>
+  </wallpaper>
+</wallpapers>

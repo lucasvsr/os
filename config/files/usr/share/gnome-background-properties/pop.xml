@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE wallpapers SYSTEM "gnome-wp-list.dtd">
+<wallpapers>
+  <wallpaper deleted="false">
+    <name>benjamin-voros-250200</name>
+    <filename>/usr/share/backgrounds/pop/benjamin-voros-250200.jpg</filename>
+    <options>zoom</options>
+    <shade_type>solid</shade_type>
+    <pcolor>#c0c0c0</pcolor>
+    <scolor>#201c1e</scolor>
+  </wallpaper>
+  <wallpaper deleted="false">
+    <name>galen-crout-175291</name>
+    <filename>/usr/share/backgrounds/pop/galen-crout-175291.jpg</filename>
+    <options>zoom</options>
+    <shade_type>solid</shade_type>
+    <pcolor>#c3c3c3</pcolor>
+    <scolor>#060606</scolor>
+  </wallpaper>
+  <wallpaper deleted="false">
+    <name>kate-hazen-fractal-mountains</name>
+    <filename>/usr/share/backgrounds/pop/kate-hazen-fractal-mountains.png</filename>
+    <options>zoom</options>
+    <shade_type>solid</shade_type>
+    <pcolor>#5c8679</pcolor>
+    <scolor>#303030</scolor>
+  </wallpaper>
+  <wallpaper deleted="false">
+    <name>tim-mccartney-39907</name>
+    <filename>/usr/share/backgrounds/pop/tim-mccartney-39907.jpg</filename>
+    <options>zoom</options>
+    <shade_type>solid</shade_type>
+    <pcolor>#a67c4b</pcolor>
+    <scolor>#655037</scolor>
+  </wallpaper>
+  <wallpaper deleted="false">
+    <name>tony-webster-97532</name>
+    <filename>/usr/share/backgrounds/pop/tony-webster-97532.jpg</filename>
+    <options>zoom</options>
+    <shade_type>solid</shade_type>
+    <pcolor>#bac4bd</pcolor>
+    <scolor>#00071a</scolor>
+  </wallpaper>
+</wallpapers>
