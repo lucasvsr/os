@@ -27,7 +27,7 @@ download() {
 
         if [[ $baixado -eq 0 ]]; then
 
-            curl -o "$file" -OL https://github.com/ryanoasis/nerd-fonts/releases/latest/download/"$file"
+            curl -o "$file" -OL "https://github.com/ryanoasis/nerd-fonts/releases/latest/download/$file"
 
             if [[ -f "$file" ]]; then
 
