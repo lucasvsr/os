@@ -18,7 +18,7 @@ download() {
 
     mkcd "$1"
 
-    for type in "${COMPRESS_TYPES[@]}"; do
+    echo "${COMPRESS_TYPES[@]}" | while IFS=$'\n' read -r -d ' ' type; do
 
         baixado=$(ls | wc -l)
         file="$1.$type"
