@@ -14,29 +14,31 @@ mkcd() {
 download() {
 
     local baixado
+    local file
 
     mkcd "$1"
 
     for type in "${COMPRESS_TYPES[@]}"; do
 
         baixado=$(ls | wc -l)
+        file="$1.$type"
 
         echo "Tentando com .$type"
 
         if [[ $baixado -eq 0 ]]; then
 
-            curl -o "$1.$type" -OL https://github.com/ryanoasis/nerd-fonts/releases/latest/download/"$1.$type"
+            curl -o "$file" -OL https://github.com/ryanoasis/nerd-fonts/releases/latest/download/"$file"
 
-            if [[ -f "$1.$type" ]]; then
+            if [[ -f "$file" ]]; then
 
                 case $type in
 
-                tar.xz) tar xvJf "$1.$type" ;;
-                zip) unzip "$1.$type" ;;
+                tar.xz) tar xvJf "$file" ;;
+                zip) unzip "$file" ;;
 
                 esac
 
-                rm -rf "$1.$type"
+                rm -rf "$file"
                 cd ..
                 baixado="yes"
                 echo "--- $font baixada ---"
