@@ -19,7 +19,9 @@ download() {
 
     for type in "${COMPRESS_TYPES[@]}"; do
 
-        if [[ -z "${baixado}" ]]; then
+        baixado=$(ls | wc -l)
+
+        if [[ $baixado -eq 0 ]]; then
 
             curl -o "$1.$type" -OL https://github.com/ryanoasis/nerd-fonts/releases/latest/download/"$1.$type"
 
