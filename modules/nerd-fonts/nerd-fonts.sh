@@ -23,7 +23,6 @@ download() {
         baixado=$(ls | wc -l)
         file="$1.$type"
 
-        echo "Tentando com .$type"
         echo "https://github.com/ryanoasis/nerd-fonts/releases/latest/download/$file"
 
         if [[ $baixado -eq 0 ]]; then
@@ -70,7 +69,7 @@ for font in "${nerdfonts[@]}"; do
 
     echo "--- Baixando $font ---"
 
-    download "$font"
+    download "$(echo "$font" | tr -d '\n')"
 
 done
 
