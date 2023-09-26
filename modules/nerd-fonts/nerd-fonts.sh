@@ -6,6 +6,12 @@ COMPRESS_TYPES=("tar.xz" "zip")
 
 mkcd() {
 
+    if [ -d "$1" ]; then
+        
+        rm -rf "$1"
+
+    fi
+    
     mkdir -p "$1"
     cd "$1" || exit 0
 
@@ -15,6 +21,8 @@ download() {
 
     local downloaded
     local file
+
+    mkcd "$1"
 
     echo "${COMPRESS_TYPES[@]}" | while IFS=$'\n' read -r -d ' ' type; do
 
@@ -28,9 +36,6 @@ download() {
             curl -o "$file" -OL https://github.com/ryanoasis/nerd-fonts/releases/latest/download/"$file"
 
             if [[ -f "$file" ]]; then
-
-                mkcd "$1"
-                mv $NERD_FONTS_DIR/"$file" $NERD_FONTS_DIR/"$1"/"$file"
 
                 case $type in
 
