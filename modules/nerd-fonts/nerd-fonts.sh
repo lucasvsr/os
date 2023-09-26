@@ -69,6 +69,8 @@ for font in "${nerdfonts[@]}"; do
 
 done
 
+ls -l $NERD_FONTS_DIR
+
 fc-cache -f $NERD_FONTS_DIR
 
 echo "--- Nerd-fonts installed ---"
