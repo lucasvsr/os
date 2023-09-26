@@ -6,6 +6,12 @@ COMPRESS_TYPES=("tar.xz" "zip")
 
 mkcd() {
 
+    if [ -d "$1" ]; then
+        
+        rm -rf "$1"
+
+    fi
+    
     mkdir -p "$1"
     cd "$1" || exit 0
 
