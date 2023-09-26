@@ -22,6 +22,8 @@ download() {
     local downloaded
     local file
 
+    mkcd "$1"
+
     echo "${COMPRESS_TYPES[@]}" | while IFS=$'\n' read -r -d ' ' type; do
 
         downloaded=$(ls | wc -l)
@@ -34,9 +36,6 @@ download() {
             curl -o "$file" -OL https://github.com/ryanoasis/nerd-fonts/releases/latest/download/"$file"
 
             if [[ -f "$file" ]]; then
-
-                mkcd "$1"
-                mv $NERD_FONTS_DIR/"$file" $NERD_FONTS_DIR/"$1"/"$file"
 
                 case $type in
 
