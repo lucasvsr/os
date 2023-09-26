@@ -30,7 +30,7 @@ download() {
             if [[ -f "$file" ]]; then
 
                 mkcd "$1"
-                mv $NERD_FONTS_DIR/"$file" "$1"/"$file"
+                mv $NERD_FONTS_DIR/"$file" $NERD_FONTS_DIR/"$1"/"$file"
 
                 case $type in
 
