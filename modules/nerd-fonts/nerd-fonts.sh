@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -oue pipefail
 
-FONTS_DIR=/usr/share/fonts/nerd-fonts
+NERD_FONTS_DIR=/usr/share/fonts/nerd-fonts
 COMPRESS_TYPES=("tar.xz" "zip")
 
 mkcd() {
@@ -13,23 +13,24 @@ mkcd() {
 
 download() {
 
-    local baixado
+    local downloaded
     local file
-
-    mkcd "$1"
 
     echo "${COMPRESS_TYPES[@]}" | while IFS=$'\n' read -r -d ' ' type; do
 
-        baixado=$(ls | wc -l)
+        downloaded=$(ls | wc -l)
         file="$1.$type"
 
-        echo "https://github.com/ryanoasis/nerd-fonts/releases/latest/download/$file"
+        if [[ $downloaded -eq 0 ]]; then
 
-        if [[ $baixado -eq 0 ]]; then
+            echo "--- Downloading $file ---"
 
             curl -o "$file" -OL https://github.com/ryanoasis/nerd-fonts/releases/latest/download/"$file"
 
             if [[ -f "$file" ]]; then
+
+                mkcd "$1"
+                mv $NERD_FONTS_DIR/"$file" "$1"/"$file"
 
                 case $type in
 
@@ -39,42 +40,38 @@ download() {
                 esac
 
                 rm -rf "$file"
-                cd $FONTS_DIR
-                echo "--- $font baixada ---"
+
+                echo "--- $file downloaded ---"
 
             else
 
-                echo "--- Não foi possível baixar $1 ---"
-                cd $FONTS_DIR
-                rm -rf "$1"
+                echo "--- Unable to download $file ---"
 
             fi
 
         fi
 
+        cd $NERD_FONTS_DIR
+
     done
 
 }
 
-mkcd $FONTS_DIR
+mkcd $NERD_FONTS_DIR
 
-echo "--- Fazendo download das nerd-fonts ---"
+echo "--- Downloading selected nerd-fonts ---"
 
 get_yaml_array nerdfonts '.fonts[]' "$1"
 
 for font in "${nerdfonts[@]}"; do
 
-    font=$(echo "$font" | tr -d '\n')
-
-    echo "--- Baixando $font ---"
-
     download "$(echo "$font" | tr -d '\n')"
 
 done
 
-fc-cache -f $FONTS_DIR
+fc-cache -f $NERD_FONTS_DIR
 
-echo "--- Fontes instaladas ---"
+echo "--- Nerd-fonts installed ---"
 
 cd /
 
