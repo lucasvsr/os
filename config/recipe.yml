@@ -24,7 +24,6 @@ modules:
     repos:
       # - https://copr.fedorainfracloud.org/coprs/atim/starship/repo/fedora-%OS_VERSION%/atim-starship-fedora-%OS_VERSION%.repo
       - https://download.docker.com/linux/fedora/docker-ce.repo
-      - https://repo.fortinet.com/repo/7.0/centos/8/os/x86_64/fortinet.repo
     install:
       - python3-pip
       - libadwaita # libadwaita comes with silverblue, but not with other flavors
@@ -42,6 +41,7 @@ modules:
       - neofetch
       - htop
       - https://cdn.insynchq.com/builds/linux/insync-3.8.5.50499-fc38.x86_64.rpm
+      - https://filestore.fortinet.com/forticlient/forticlient_vpn_7.0.7.0246_x86_64.rpm
     remove:
       # - firefox # default firefox removed in favor of flatpak
       # - firefox-langpacks # langpacks needs to also be removed to prevent dependency problems
