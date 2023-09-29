@@ -7,7 +7,7 @@ export FONTS_MODULE_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null &
 for source in "$FONTS_MODULE_DIR"/sources/*.sh; do
 
     chmod 777 "$source"
-    "$(get_yaml_array FONTS ".fonts.${source%.}[]" "$1")"
+    get_yaml_array FONTS ".fonts.${source%.}[]" "$1"
 
     bash "$source" "${FONTS[@]}"
     
