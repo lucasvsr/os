@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -oue pipefail
 
-mapfile -t FONTS <<< "$@"
+mapfile -d '\n' -t FONTS <<< "$@"
 URL="https://fonts.google.com/download?family="
 DIR_PRINCIPAL=/usr/share/fonts/google-fonts
 
