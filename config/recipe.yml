@@ -77,5 +77,10 @@ modules:
       - Terminus
       - JetBrainsMono
       - NerdFontsSymbolsOnly
+
+  - type: google-fonts
+    fonts:
+      - Roboto
+      - Open Sans
   
   
