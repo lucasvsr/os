@@ -9,7 +9,7 @@ if [ ${#FONTS[@]} -gt 0 ]; then
 
     echo "Installation of google-fonts started"
 
-    echo "${COMPRESS_TYPES[@]}" | while IFS=$'\n' read -r font; do
+    echo "${FONTS[@]}" | while IFS=$'\n' read -r font; do
 
         font="$(echo "$font" | tr -d '\n')"
 
