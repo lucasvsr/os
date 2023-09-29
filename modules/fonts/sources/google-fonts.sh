@@ -5,7 +5,7 @@ FONTS=( $@ )
 URL="https://fonts.google.com/download?family="
 DIR_PRINCIPAL=/usr/share/fonts/google-fonts
 
-echo $FONTS
+echo "${FONTS[@]}"
 
 if [ ${#FONTS[@]} -gt 0 ]; then
 
