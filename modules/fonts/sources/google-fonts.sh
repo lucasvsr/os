@@ -5,6 +5,9 @@ FONTS=( $@ )
 URL="https://fonts.google.com/download?family="
 DIR_PRINCIPAL=/usr/share/fonts/google-fonts
 
+oldIFS=$IFS
+IFS=$'\n'
+
 if [ ${#FONTS[@]} -gt 0 ]; then
 
     echo "Installation of google-fonts started"
@@ -24,3 +27,5 @@ if [ ${#FONTS[@]} -gt 0 ]; then
     fc-cache -f $DIR_PRINCIPAL
 
 fi
+
+IFS=$oldIFS
