@@ -20,20 +20,19 @@ mkcd() {
 download() {
 
     local downloaded
-    local file
+    local file=$1
 
     mkcd "$1"
 
     echo "${COMPRESS_TYPES[@]}" | while IFS=$'\n' read -r -d ' ' type; do
 
         downloaded=$(ls | wc -l)
-        file="$1.$type"
 
         if [[ $downloaded -eq 0 ]]; then
 
             echo "--- Downloading $file ---"
 
-            curl -o "$file" -OL https://fonts.google.com/download?family="$file"
+            curl -o "$file.$type" -OL https://fonts.google.com/download?family="$file"
 
             if [[ -f "$file" ]]; then
 
