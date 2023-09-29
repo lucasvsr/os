@@ -40,9 +40,10 @@ download() {
 
             echo "--- Downloading $file ---"
 
-            if [[ -n "${add_name_and_extension_url}" ]]; then
+            if [[ "${add_name_and_extension_url}" == *"y"* ]]; then
 
                 curl -o "$file" -OL "$url$file"
+                
             else
 
                 curl -o "$file" -OL "$url"
@@ -84,7 +85,7 @@ if [ ${#GOOGLE[@]} -gt 0 ]; then
 
         font="$(echo "$font" | tr -d '\n')"
 
-        download "$font" "https://fonts.google.com/download?family=${font// /%20}" $DIR_FONTS/google-fonts
+        download "$font" "https://fonts.google.com/download?family=${font// /%20}" $DIR_FONTS/google-fonts "n"
 
     done
 
