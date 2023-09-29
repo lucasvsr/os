@@ -12,7 +12,7 @@ if [ ${#FONTS[@]} -gt 0 ]; then
 
     echo "Installation of google-fonts started"
 
-    for font in ${FONTS[@]}; do
+    for font in "${FONTS[@]}"; do
 
         font="$(echo "$font" | tr -d '\n')"
 
