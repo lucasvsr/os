@@ -82,13 +82,17 @@ modules:
       - docker.sh
       - extensions.sh
   
-  - type: nerd-fonts
+  - type: fonts
     fonts:
-      - FiraCode
-      - Hack
-      - SourceCodePro
-      - Terminus
-      - JetBrainsMono
-      - NerdFontsSymbolsOnly
+      nerd-fonts:
+        - FiraCode
+        - Hack
+        - SourceCodePro
+        - Terminus
+        - JetBrainsMono
+        - NerdFontsSymbolsOnly
+      google-fonts:
+        - Roboto
+        - Open Sans
   
   
