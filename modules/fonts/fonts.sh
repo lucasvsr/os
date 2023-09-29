@@ -26,6 +26,12 @@ echo_with_pattern() {
 
 }
 
+source_font_dir() {
+
+    fc-cache -f "$1"
+
+}
+
 download() {
 
     local name=$1
@@ -97,7 +103,7 @@ if [ ${#GOOGLE[@]} -gt 0 ]; then
 
     done
 
-    ls -la $DIR_FONTS/google-fonts
+    source_font_dir $DIR_FONTS/google-fonts
 
 fi
 
@@ -115,6 +121,8 @@ if [ ${#NERD[@]} -gt 0 ]; then
 
     done
 
-    ls -la $DIR_FONTS/nerd-fonts
+    source_font_dir $DIR_FONTS/nerd-fonts
 
 fi
+
+cd /
