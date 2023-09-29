@@ -5,8 +5,6 @@ FONTS=( $@ )
 URL="https://fonts.google.com/download?family="
 DIR_PRINCIPAL=/usr/share/fonts/google-fonts
 
-echo "${FONTS[@]}"
-
 if [ ${#FONTS[@]} -gt 0 ]; then
 
     echo "Installation of google-fonts started"
@@ -14,6 +12,8 @@ if [ ${#FONTS[@]} -gt 0 ]; then
     for font in "${FONTS[@]}"; do
 
         font="$(echo "$font" | tr -d '\n')"
+
+        echo "$font"
 
         mkdir -p "$DIR_PRINCIPAL/$font"
 
