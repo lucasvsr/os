@@ -71,6 +71,8 @@ get_yaml_array googlefonts '.fonts[]' "$1"
 
 for font in "${googlefonts[@]}"; do
 
+    font="$(echo "$font" | tr -d '\n')"
+
     download "${font// /%20}"
 
 done
