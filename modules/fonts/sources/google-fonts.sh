@@ -5,6 +5,8 @@ declare FONTS=( "$@" )
 declare URL="https://fonts.google.com/download?family="
 declare DIR_PRINCIPAL=/usr/share/fonts/google-fonts
 
+echo $FONTS
+
 if [ ${#FONTS[@]} -gt 0 ]; then
 
     echo "Installation of google-fonts started"
