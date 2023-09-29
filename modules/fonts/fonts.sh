@@ -9,9 +9,9 @@ for source in "$FONTS_MODULE_DIR"/sources/*.sh; do
     chmod +x "$source"
 
     filename=$(basename -- "$source")
-    
+
     get_yaml_array FONTS ".fonts.${filename%.*}[]" "$1"
 
-    bash "$source" "${FONTS[@]}"
+    bash "$source" ${FONTS[@]}
     
 done
