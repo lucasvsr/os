@@ -7,12 +7,12 @@ export FONTS_MODULE_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null &
 
 if [ ${#GOOGLE[@]} -gt 0 ]; then
 
-    bash "$FONTS_MODULE_DIR"/sources/google-fonts.sh "${GOOGLE[@]}"
+    "$FONTS_MODULE_DIR"/sources/google-fonts.sh "${GOOGLE[@]}"
 
 fi
 
 if [ ${#NERD[@]} -gt 0 ]; then
 
-    bash "$FONTS_MODULE_DIR"/sources/nerd-fonts.sh "${NERD[@]}"
+    "$FONTS_MODULE_DIR"/sources/nerd-fonts.sh "${NERD[@]}"
 
 fi
