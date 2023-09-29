@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 set -oue pipefail
 
-declare FONTS=( "$@" )
-declare URL="https://fonts.google.com/download?family="
-declare DIR_PRINCIPAL=/usr/share/fonts/google-fonts
+FONTS=( "$@" )
+URL="https://fonts.google.com/download?family="
+DIR_PRINCIPAL=/usr/share/fonts/google-fonts
 
 echo $FONTS
 
