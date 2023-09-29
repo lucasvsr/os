@@ -20,6 +20,12 @@ mkcd() {
 
 }
 
+echo_with_pattern() {
+
+    echo "---- $1 ----"
+
+}
+
 download() {
 
     local name=$1
@@ -38,12 +44,12 @@ download() {
 
         if [[ $downloaded -eq 0 ]]; then
 
-            echo "--- Downloading $file ---"
+            echo_with_pattern "Downloading $file"
 
             if [[ "${add_name_and_extension_url}" == *"y"* ]]; then
 
                 curl -o "$file" -OL "$url$file"
-                
+
             else
 
                 curl -o "$file" -OL "$url"
@@ -61,11 +67,11 @@ download() {
 
                 rm -rf "$file"
 
-                echo "--- $file downloaded ---"
+                echo_with_pattern "$file downloaded"
 
             else
 
-                echo "--- Unable to download $file ---"
+                echo_with_pattern "Unable to download $file"
 
             fi
 
@@ -81,6 +87,8 @@ if [ ${#GOOGLE[@]} -gt 0 ]; then
 
     mkcd $DIR_FONTS/google-fonts
 
+    echo_with_pattern "Installation of google-fonts started"
+
     for font in "${GOOGLE[@]}"; do
 
         font="$(echo "$font" | tr -d '\n')"
@@ -89,11 +97,15 @@ if [ ${#GOOGLE[@]} -gt 0 ]; then
 
     done
 
+    ls -la $DIR_FONTS/google-fonts
+
 fi
 
 if [ ${#NERD[@]} -gt 0 ]; then
 
     mkcd $DIR_FONTS/nerd-fonts
+
+    echo_with_pattern "Installation of nerd-fonts started"
 
     for font in "${NERD[@]}"; do
 
@@ -102,5 +114,7 @@ if [ ${#NERD[@]} -gt 0 ]; then
         download "$font" "https://github.com/ryanoasis/nerd-fonts/releases/latest/download/" $DIR_FONTS/nerd-fonts "y"
 
     done
+
+    ls -la $DIR_FONTS/nerd-fonts
 
 fi
