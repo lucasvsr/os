@@ -7,13 +7,11 @@ NAME=$1
 URL=$2
 DEST=$3
 
-echo "$NAME"
-echo "$URL"
-echo "$DEST"
-
 mkdir -p "$DEST"
 
 echo "${COMPRESS_TYPES[@]}" | while IFS=$'\n' read -r type; do
+
+    echo "Entrou no loop"
 
     DOWNLOAD=$(ls | wc -l)
     FILE="$NAME.$type"
