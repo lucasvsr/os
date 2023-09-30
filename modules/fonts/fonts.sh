@@ -2,8 +2,9 @@
 set -oue pipefail
 
 export FONTS_MODULE_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
+export FONTS_MODULE_SCRIPTS_DIR=$FONTS_MODULE_DIR/scripts
 
-for script in "$FONTS_MODULE_DIR"/scripts/*.sh; do
+for script in "$FONTS_MODULE_SCRIPTS_DIR"/*.sh; do
 
     chmod +x "$script"
     
