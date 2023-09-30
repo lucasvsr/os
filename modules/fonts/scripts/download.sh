@@ -11,9 +11,7 @@ mkdir -p "$DEST"
 
 echo "${COMPRESS_TYPES[@]}" | while IFS=$'\n' read -r type; do
 
-    echo "Entrou no loop"
-
-    DOWNLOAD=$(ls | wc -l)
+    DOWNLOAD=$(ls "$DEST" | wc -l)
     FILE="$NAME.$type"
 
     if [[ $DOWNLOAD -eq 0 ]]; then
