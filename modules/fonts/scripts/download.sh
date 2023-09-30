@@ -9,7 +9,7 @@ DEST=$3
 
 mkdir -p "$DEST"
 
-echo "${COMPRESS_TYPES[@]}" | while IFS=$'\n' read -r type; do
+echo "${COMPRESS_TYPES[@]}" | while IFS=$'\n' read -r -d ' ' type; do
 
     DOWNLOAD=$(ls "$DEST" | wc -l)
     FILE="$NAME.$type"
@@ -31,7 +31,7 @@ echo "${COMPRESS_TYPES[@]}" | while IFS=$'\n' read -r type; do
 
             rm -rf "$FILE"
 
-            echo "$FILE DOWNLOAD"
+            echo "$FILE downloaded"
 
         else
 
