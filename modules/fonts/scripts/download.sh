@@ -3,13 +3,17 @@ set -oue pipefail
 
 COMPRESS_TYPES=("zip" "tar.gz")
 
-declare NAME=$1
-declare URL=$2
-declare DEST=$3
+NAME=$1
+URL=$2
+DEST=$3
+
+echo "$NAME"
+echo "$URL"
+echo "$DEST"
 
 mkdir -p "$DEST"
 
-echo "${COMPRESS_TYPES[@]}" | while IFS=$'\n' read -r -d ' ' type; do
+echo "${COMPRESS_TYPES[@]}" | while IFS=$'\n' read -r type; do
 
     DOWNLOAD=$(ls | wc -l)
     FILE="$NAME.$type"
