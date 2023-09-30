@@ -2,14 +2,14 @@
 set -oue pipefail
 
 NAME=$1
-URL=$2
-DEST=$3
-TYPE=$4
+FORMAT=$2
+URL=$3
+DEST=$4
 
 mkdir -p "$DEST"
 
 DOWNLOAD=$(ls "$DEST" | wc -l)
-FILE="$NAME.$TYPE"
+FILE="$NAME.$FORMAT"
 
 if [[ $DOWNLOAD -eq 0 ]]; then
 
@@ -19,7 +19,7 @@ if [[ $DOWNLOAD -eq 0 ]]; then
 
     if [[ -f "$FILE" ]]; then
 
-        case $TYPE in
+        case $FORMAT in
 
         tar.xz) tar xvJf "$FILE" -C "$DEST" ;;
         zip) unzip "$FILE" -d "$DEST" ;;

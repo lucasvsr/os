@@ -4,6 +4,7 @@ set -oue pipefail
 mapfile -t FONTS <<< "$@"
 URL="https://fonts.google.com/download?family="
 DIR_PRINCIPAL=/usr/share/fonts/google-fonts
+FORMAT="zip"
 
 if [ ${#FONTS[@]} -gt 0 ]; then
 
@@ -13,7 +14,7 @@ if [ ${#FONTS[@]} -gt 0 ]; then
 
         font="$(echo "$font" | sed -e 's|^[[:blank:]]||g' | tr -d '\n')"
 
-        bash "$FONTS_MODULE_DIR"/scripts/download.sh "$font" "$URL${font// /%20}" "$DIR_PRINCIPAL/$font" "zip"
+        bash "$FONTS_MODULE_DIR"/scripts/download.sh "$font" "$FORMAT" "$URL${font// /%20}" "$DIR_PRINCIPAL/$font" 
 
     done
 
