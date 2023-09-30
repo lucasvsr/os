@@ -1,44 +1,39 @@
 #!/usr/bin/env bash
 set -oue pipefail
 
-COMPRESS_TYPES=("zip" "tar.gz")
-
 NAME=$1
 URL=$2
 DEST=$3
+TYPE=$4
 
 mkdir -p "$DEST"
 
-echo "${COMPRESS_TYPES[@]}" | while IFS=$'\n' read -r -d ' ' type; do
+DOWNLOAD=$(ls "$DEST" | wc -l)
+FILE="$NAME.$TYPE"
 
-    DOWNLOAD=$(ls "$DEST" | wc -l)
-    FILE="$NAME.$type"
+if [[ $DOWNLOAD -eq 0 ]]; then
 
-    if [[ $DOWNLOAD -eq 0 ]]; then
+    echo "Downloading $FILE"
 
-        echo "Downloading $FILE"
+    curl -o "$FILE" -OL "$URL"
 
-        curl -o "$FILE" -OL "$URL"
+    if [[ -f "$FILE" ]]; then
 
-        if [[ -f "$FILE" ]]; then
+        case $TYPE in
 
-            case $type in
+        tar.xz) tar xvJf "$FILE" -C "$DEST" ;;
+        zip) unzip "$FILE" -d "$DEST" ;;
 
-            tar.xz) tar xvJf "$FILE" -C "$DEST" ;;
-            zip) unzip "$FILE" -d "$DEST" ;;
+        esac
 
-            esac
+        rm -rf "$FILE"
 
-            rm -rf "$FILE"
+        echo "$FILE downloaded"
 
-            echo "$FILE downloaded"
+    else
 
-        else
-
-            echo "Unable to download $FILE"
-
-        fi
+        echo "Unable to download $FILE"
 
     fi
 
-done
+fi
