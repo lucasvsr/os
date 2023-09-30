@@ -7,15 +7,14 @@ declare DIR_PRINCIPAL=/usr/share/fonts/nerd-fonts
 
 if [ ${#FONTS[@]} -gt 0 ]; then
 
-    echo "Installation of nerd-fonts started"
+    echo "Installation of google-fonts started"
 
     for font in "${FONTS[@]}"; do
 
-        font="$(echo "$font" | tr -d '\n')"
+        font="$(echo "$font" | sed -e 's|^[[:blank:]]||g' | tr -d '\n')"
 
         mkdir -p "$DIR_PRINCIPAL/$font"
-
-        bash "$FONTS_MODULE_DIR"/scripts/download.sh "$font" "$URL${font// /%20}" "$DIR_PRINCIPAL/$font"
+        bash "$FONTS_MODULE_DIR"/scripts/download.sh "$font" "$URL$font" "$DIR_PRINCIPAL/$font"
 
     done
 

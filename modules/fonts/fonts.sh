@@ -3,6 +3,7 @@ set -oue pipefail
 
 export FONTS_MODULE_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
 
+chmod +x "$FONTS_MODULE_DIR"/scripts/download.sh
 
 for source in "$FONTS_MODULE_DIR"/sources/*.sh; do
 
