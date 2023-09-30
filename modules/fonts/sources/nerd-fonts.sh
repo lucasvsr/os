@@ -13,7 +13,7 @@ if [ ${#FONTS[@]} -gt 0 ]; then
 
         font="$(echo "$font" | sed -e 's|^[[:blank:]]||g' | tr -d '\n')"
         
-        bash "$FONTS_MODULE_DIR"/scripts/download.sh "$font" "$URL$font" "$DIR_PRINCIPAL/$font" "tar.gz"
+        bash "$FONTS_MODULE_DIR"/scripts/download.sh "$font" "$URL$font" "$DIR_PRINCIPAL/$font" "tar.xz"
 
     done
 
