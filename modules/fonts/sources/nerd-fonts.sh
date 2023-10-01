@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -oue pipefail
 
-FONTS=( "$@" )
+mapfile -t FONTS <<< "$@"
 URL="https://github.com/ryanoasis/nerd-fonts/releases/latest/download/"
 DIR_PRINCIPAL=/usr/share/fonts/nerd-fonts
 COMPACT_FORMAT="zip"
