@@ -10,6 +10,8 @@ COMPACT_FORMAT="zip"
 
 if [ ${#FONTS[@]} -gt 0 ]; then
 
+    rm -rf "$DIR_PRINCIPAL"
+
     echo "Installation of nerd-fonts started"
 
     for font in "${FONTS[@]}"; do
