@@ -10,6 +10,8 @@ FORMAT="zip"
 
 if [ ${#FONTS[@]} -gt 0 ]; then
 
+    rm -rf "$DIR_PRINCIPAL"
+
     echo "Installation of google-fonts started"
 
     for font in "${FONTS[@]}"; do
