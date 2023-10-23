@@ -48,6 +48,7 @@ modules:
     install:
       # - fonts # selection of common good free fonts
       - justfiles # add "!include /usr/share/ublue-os/just/bling.just"
+      - flatpaksync
                   # in your custom.just (added by default) or local justfile
       # - nix-installer # shell shortcuts for determinate system's nix installers
       - ublue-os-wallpapers
