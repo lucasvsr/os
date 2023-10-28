@@ -1,3 +1,3 @@
 #!/bin/bash
 
-echo 10000 | sudo tee /proc/sys/fs/inotify/max_user_watches
+sudo sysctl fs.inotify.max_user_watches=1000000
