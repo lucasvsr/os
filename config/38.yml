@@ -27,3 +27,5 @@ modules:
   - from-file: components/scripts.yml
   
   - from-file: components/fonts.yml
+
+  - from-file: components/flatpak.yml
