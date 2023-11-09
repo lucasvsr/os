@@ -1,5 +1,5 @@
 # image will be published to ghcr.io/<user>/<name>
-name: os
+name: os-stable
 # description will be included in the image's metadata
 description: OS - OCI do meu sistema operacional
 
