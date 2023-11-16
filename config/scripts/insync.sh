@@ -6,7 +6,7 @@ mkdir -p /etc/yum.repos.d/
 
 echo "[insync]
 name=insync repo
-baseurl=http://yum.insync.io/[DISTRIBUTION]/$releasever/
+baseurl=http://yum.insync.io/fedora/$releasever/
 gpgcheck=1
 gpgkey=https://d2t3ff60b2tol4.cloudfront.net/repomd.xml.key
 enabled=1
