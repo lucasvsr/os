@@ -20,5 +20,5 @@ install:
   - neofetch
   - htop
 remove:
-  # - firefox
-  # - firefox-langpacks
+  - firefox
+  - firefox-langpacks
