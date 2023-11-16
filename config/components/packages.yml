@@ -19,8 +19,6 @@ install:
   - micro
   - neofetch
   - htop
-  - https://cdn.insynchq.com/builds/linux/insync-3.8.6.50504-fc39.x86_64.rpm
-  - https://cdn.insynchq.com/builds/linux/insync-nautilus-3.8.2.50468-1.noarch.rpm
 remove:
   - firefox
   - firefox-langpacks
