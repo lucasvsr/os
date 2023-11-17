@@ -16,7 +16,7 @@ install:
   - flatpak
   - git
   - gh
-  - insync
+  - /tmp/insync.rpm
   - micro
   - neofetch
   - htop
