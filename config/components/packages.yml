@@ -16,6 +16,7 @@ install:
   - flatpak
   - git
   - gh
+  - insync
   - micro
   - neofetch
   - htop
