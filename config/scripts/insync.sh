@@ -1,27 +1,10 @@
 #!/bin/bash
 
-REPO="https://d2t3ff60b2tol4.cloudfront.net/repomd.xml.key"
+RPM="https://cdn.insynchq.com/builds/linux/insync-3.8.6.50504-fc39.x86_64.rpm"
 
-mkdir -p /etc/yum.repos.d/
-
-if sudo rpm --import $REPO
+if curl $RPM --output /tmp/insync.rpm
 then
 
-  echo "Chave de importação do Insync importada com sucesso."
+  echo "Insync baixado com sucesso."
 
 fi
-
-if curl $REPO > /etc/yum.repos.d/insync_yum_gpg.key
-then
-
-  echo "GPG do Insync baixada com sucesso."
-
-fi
-
-echo "[insync]
-name=insync repo
-baseurl=http://yum.insync.io/fedora/$IMAGE_MAJOR_VERSION/
-gpgcheck=1
-gpgkey=/etc/yum.repos.d/insync_yum_gpg.key
-enabled=1
-metadata_expire=120m" > /etc/yum.repos.d/insync.repo
