@@ -16,10 +16,10 @@ install:
   - flatpak
   - git
   - gh
+  - /tmp/insync.rpm
   - micro
   - neofetch
   - htop
-  - https://cdn.insynchq.com/builds/linux/insync-3.8.6.50504-fc39.x86_64.rpm
 remove:
   - firefox
   - firefox-langpacks
