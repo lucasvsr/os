@@ -33,5 +33,6 @@ done <<<"$EXTENSIONS"
 
 echo "Habilitando extensões"
 sed -i "s/$EXTENSIONS_LIST_REGEX/$EXTENSIONS_LIST/g" "$EXTENSIONS_LIST_TO_ENABLE_FILE"
+cp -r "$MODULE_DIR"/extensions.d /etc/dconf/db/
 
 
