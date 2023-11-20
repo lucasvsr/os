@@ -20,8 +20,7 @@ download() {
 
             echo "$1 baixado com sucesso."
             echo "Iniciando instalação"
-            mkdir -p "$extensions_dir/$1"
-            unzip "${download_dir}" -d "$extensions_dir/$1"
+            gnome-extensions install "${download_dir}"
 
         fi
 
