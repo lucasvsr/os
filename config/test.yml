@@ -20,6 +20,8 @@ modules:
                   # should be added into /usr/etc/ as that is the proper "distro"
                   # config directory on ostree. Read more in the files module's README
 
+  - from-file: components/gnome-extensions.yml 
+
   - from-file: components/packages.yml
 
   - from-file: components/bling.yml
