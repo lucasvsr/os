@@ -10,7 +10,11 @@ while IFS= read -r extension; do
     name=$(echo "$extension" | yq eval '.name' -)
     version=$(echo "$extension" | yq eval '.version' -)
 
-    echo "$name"
-    echo "$version"
+ if [[ -n "${name}" ]] && [[ ! "${name}" == "null" ]]; then
+    
+    bash "$MODULE_DIR"/install.sh "$name" "$version"
+
+ fi
+ 
 
 done <<< "$EXTENSIONS"

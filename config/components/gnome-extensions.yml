@@ -1,4 +1,10 @@
-type: gnome-extensions # configure what to pull in from ublue-os/bling
+type: gnome-extensions
 extensions:
-  - name: teste
-    version: 1
+  - name: appindicatorsupportr@gcjonas.gmail.com
+    version: 57
+  - name: blur-my-shell@aunetx
+    version: 54
+  - name: clipboard-indicator@tudmotu.com
+    version: 56
+  - name: fullscreen-to-empty-workspace@aiono.dev
+    version: 6
