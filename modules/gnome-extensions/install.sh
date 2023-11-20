@@ -8,6 +8,7 @@ download() {
 
     local zip="$1.$2.shell-extension.zip"
     local extensions_dir="/usr/share/gnome-shell/extensions"
+    local download_dir="/tmp/${zip//@/}"
 
     if [ -d "${extensions_dir}/$1" ]; 
     then
@@ -16,14 +17,13 @@ download() {
 
     else
 
-        if curl https://extensions.gnome.org/extension-data/"${zip//@/}" > "/tmp/${zip//@/}"
+        if curl https://extensions.gnome.org/extension-data/"${zip//@/}" > "${download_dir}"
         then
 
             echo "$1 baixado com sucesso."
             echo "Iniciando instalação"
-            gnome-extensions install "/tmp/${zip//@/}" && echo "$1 instalado com sucesso."
             mkdir -p "$extensions_dir/$1"
-            unzip "/tmp/${zip//@/}" -d "$extensions_dir/$1"
+            unzip "${download_dir}" -d "$extensions_dir/$1"
             
         fi
 
