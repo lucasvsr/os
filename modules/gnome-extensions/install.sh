@@ -4,11 +4,7 @@ set -oue pipefail
 EXTENSION=$1
 VERSION=$2
 
-dir=$(pwd)
-
 download() {
-
-    cd /tmp/
 
     local zip="$1.v$2.shell-extension.zip"
     local extensions_dir="/usr/share/gnome-shell/extensions"
@@ -34,5 +30,3 @@ download() {
 }
 
 download "$EXTENSION" "$VERSION"
-
-gsettings set org.gnome.shell enabled-extensions "['${EXTENSION}']"
