@@ -33,7 +33,7 @@ done <<<"$EXTENSIONS"
 
 echo "Habilitando extensões"
 sed -i "s/$EXTENSIONS_LIST_REGEX/$EXTENSIONS_LIST/g" "$EXTENSIONS_LIST_TO_ENABLE_FILE"
-cp -rf "$MODULE_DIR"/gdm.d /etc/dconf/db/
+cp -rf "$MODULE_DIR"/gdm.d /etc/dconf/db/local.d
 sudo dconf update
 
 
