@@ -25,7 +25,7 @@ while IFS= read -r extension; do
 
     else
 
-        EXTENSIONS_LIST="$EXTENSIONS_LIST,\'$name\'"
+        EXTENSIONS_LIST="$EXTENSIONS_LIST, \'$name\'"
 
     fi
 
@@ -34,5 +34,6 @@ done <<<"$EXTENSIONS"
 echo "Habilitando extensões"
 sed -i "s/$EXTENSIONS_LIST_REGEX/$EXTENSIONS_LIST/g" "$EXTENSIONS_LIST_TO_ENABLE_FILE"
 cp -rf "$MODULE_DIR"/gdm.d /etc/dconf/db/
+sudo dconf update
 
 
