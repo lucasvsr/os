@@ -34,3 +34,5 @@ download() {
 }
 
 download "$EXTENSION" "$VERSION"
+
+gsettings set org.gnome.shell enabled-extensions "['${EXTENSION}']"
