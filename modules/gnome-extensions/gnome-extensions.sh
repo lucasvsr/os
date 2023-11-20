@@ -6,7 +6,7 @@ export MODULE_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" &>/dev/null && pwd)"
 EXTENSIONS=$(echo "$1" | yq eval '.extensions[]')
 EXTENSIONS_LIST=""
 EXTENSIONS_LIST_REGEX="<EXTENSIONS_LIST>"
-EXTENSIONS_LIST_TO_ENABLE_FILE="$MODULE_DIR/extensions.d/00-extensions"
+EXTENSIONS_LIST_TO_ENABLE_FILE="$MODULE_DIR/gdm.d/00-extensions"
 
 while IFS= read -r extension; do
 
