@@ -1,0 +1,4 @@
+type: gnome-extesions # configure what to pull in from ublue-os/bling
+extensions:
+  - name: teste
+    version: 1
