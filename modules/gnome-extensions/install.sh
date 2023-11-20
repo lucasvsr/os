@@ -21,7 +21,9 @@ download() {
 
             echo "$1 baixado com sucesso."
             echo "Iniciando instalação"
-            gnome-extensions install "/tmp/${zip//@/}" && echo "$1 instalado com sucesso." 
+            gnome-extensions install "/tmp/${zip//@/}" && echo "$1 instalado com sucesso."
+            mkdir -p "$extensions_dir/$1"
+            unzip "/tmp/${zip//@/}" -d "$extensions_dir/$1"
             
         fi
 
