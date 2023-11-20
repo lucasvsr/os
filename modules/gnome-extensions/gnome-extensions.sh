@@ -3,7 +3,7 @@ set -oue pipefail
 
 export MODULE_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" &>/dev/null && pwd)"
 
-EXTENSIONS=$(yq eval '.extensions[]' "$1")
+EXTENSIONS=$(echo "$1" | yq eval '.extensions[]')
 
 while IFS= read -r extension; do
 
