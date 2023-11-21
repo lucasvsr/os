@@ -1,2 +1,2 @@
 [org/gnome/shell] 
-enabled-extensions = [<EXTENSIONS_LIST>]
+enabled-extensions=[<EXTENSIONS_LIST>]
