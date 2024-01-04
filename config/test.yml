@@ -27,6 +27,8 @@ modules:
   - from-file: components/bling.yml
 
   - from-file: components/scripts.yml
+
+  - from-file: components/scripts_test.yml
   
   - from-file: components/fonts.yml
 
