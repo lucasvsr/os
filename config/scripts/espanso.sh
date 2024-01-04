@@ -5,7 +5,7 @@ set -oue pipefail
 
 
 echo "Instalando as dependências do Espanso via rpm-ostree"
-rpm-ostree install make automake gcc gcc-c++ kernel-devel wl-clipboard libxkbcommon-devel dbus-devel wxGTK-devel.x86_64
+rpm-ostree install cargo make automake gcc gcc-c++ kernel-devel wl-clipboard libxkbcommon-devel dbus-devel wxGTK-devel.x86_64
 
 echo "Instalando as dependências do Espanso via cargo"
 cargo install --force cargo-make --version 0.34.0
