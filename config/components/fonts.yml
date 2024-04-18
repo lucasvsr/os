@@ -1,0 +1,14 @@
+type: fonts
+fonts:
+  nerd-fonts:
+    - Hack
+    - FiraCode
+    - SourceCodePro
+    - Terminus
+    - JetBrainsMono
+    - NerdFontsSymbolsOnly
+  google-fonts:
+    - Roboto
+    - Lato
+    - Montserrat
+    - Merriweather
