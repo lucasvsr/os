@@ -1,6 +1,6 @@
 # OS:  Meu sistema baseado do Fedora Silverblue &nbsp; [![build-ublue](https://github.com/lucasvsr/os/actions/workflows/build.yml/badge.svg)](https://github.com/lucasvsr/os/actions/workflows/build.yml)
 
-Abaixo, segue as instruções de instalação do sistema.
+Abaixo, seguem as instruções de instalação do sistema.
 
 ## Instalação (Rebase)
 
