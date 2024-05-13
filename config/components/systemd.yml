@@ -1,0 +1,4 @@
+type: systemd
+user:
+  enabled:
+    - flatpaksync.path # Enabled (runs for the user)

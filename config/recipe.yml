@@ -20,5 +20,9 @@ modules:
 
   - from-file: components/flatpak.yml
 
+  - from-file: components/files.yml
+
+  - from-file: components/systemd.yml
+
   - type: signing # this sets up the proper policy & signing files for signed images to work fully
 
