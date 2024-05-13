@@ -1,0 +1,5 @@
+modules:
+  - type: files
+    files:
+      - bin: /bin
+      - usr: /usr
