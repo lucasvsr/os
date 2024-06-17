@@ -17,8 +17,6 @@ install:
   - git
   - gh
   - micro
-  - neofetch
-  - htop
 remove:
   - firefox
   - firefox-langpacks
