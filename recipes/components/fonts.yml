@@ -7,6 +7,13 @@ fonts:
     - Terminus
     - JetBrainsMono
     - NerdFontsSymbolsOnly
+    - CascadiaMono
+    - CascadiaCode
+    - CommitMono
+    - Lekton
+    - Ubuntu
+    - UbuntuSans
+    - ZedMono
   google-fonts:
     - Roboto
     - Lato

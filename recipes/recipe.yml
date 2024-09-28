@@ -20,6 +20,8 @@ modules:
 
   - from-file: components/flatpak.yml
 
+  - from-file: components/gnome-extensions.yml
+
   - from-file: components/files.yml
 
   - from-file: components/systemd.yml
