@@ -16,6 +16,7 @@ install:
   - flatpak
   - git
   - gh
+  - gnome-shell-extension-appindicator
   - micro
 remove:
   - firefox

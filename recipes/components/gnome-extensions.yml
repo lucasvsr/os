@@ -1,7 +1,6 @@
 type: gnome-extensions
 install:
   - 3193
-  - 615
   - 5895
   - 779
   - 4167
