@@ -1,33 +1,31 @@
 type: default-flatpaks
-notify: true
-system:
-  # If no repo information is specified, Flathub will be used by default
-  repo-url: https://dl.flathub.org/repo/flathub.flatpakrepo
-  repo-name: flathub
-  repo-title: "Flathub (system)" # Optional; this sets the remote's user-facing name in graphical frontends like GNOME Software
-  install:
-    - com.github.tchx84.Flatseal
-    - io.github.giantpinkrobots.flatsweep
-    - io.github.realmazharhussain.GdmSettings
-    - io.missioncenter.MissionCenter
-    - org.gnome.Calculator
-    - org.gnome.Calendar
-    - org.gnome.Characters
-    - org.gnome.DejaDup
-    - org.gnome.Evince
-    - org.gnome.Logs
-    - org.gnome.Maps
-    - org.gnome.NautilusPreviewer
-    - org.gnome.TextEditor
-    - org.gnome.Weather
-    - org.gnome.baobab
-    - org.gnome.eog
-    - org.gnome.font-viewer
-    - org.libreoffice.LibreOffice
-    - org.videolan.VLC
-    - io.github.dvlv.boxbuddyrs
-user:
-  # If no repo information is specified, Flathub will be used by default
-  repo-url: https://dl.flathub.org/repo/flathub.flatpakrepo
-  repo-name: flathub
-  repo-title: "Flathub (user)" # Optional; this sets the remote's user-facing name in graphical frontends like GNOME Software
+configurations:
+  - scope: user
+    repo:
+      # you can override the title to make inclusion of both system and user repos clearer
+      title: Flathub (user)
+  - notify: true
+    scope: system
+    repo:
+      title: Flathub (system)
+    install:
+      - com.github.tchx84.Flatseal
+      - io.github.giantpinkrobots.flatsweep
+      - io.github.realmazharhussain.GdmSettings
+      - io.missioncenter.MissionCenter
+      - org.gnome.Calculator
+      - org.gnome.Calendar
+      - org.gnome.Characters
+      - org.gnome.DejaDup
+      - org.gnome.Evince
+      - org.gnome.Logs
+      - org.gnome.Maps
+      - org.gnome.NautilusPreviewer
+      - org.gnome.TextEditor
+      - org.gnome.Weather
+      - org.gnome.baobab
+      - org.gnome.eog
+      - org.gnome.font-viewer
+      - org.libreoffice.LibreOffice
+      - org.videolan.VLC
+      - io.github.dvlv.boxbuddyrs
